@@ -12,9 +12,14 @@ def getHTMLText(url):
 
 
 def main():
-    url = "https://v0.yiketianqi.com/api?version=history&appid=79832935&appsecret=2qocDt9D&city=%E6%B5%99%E6%B1%9F&year=2018&month=5"
-    text = getHTMLText(url)
-    data = json.loads(text)
-    print(data)
+    base = "https://v0.yiketianqi.com/api?version=history&appid=79832935&appsecret=2qocDt9D&city="
+    date = "&year=2021&month=3"
+    cities = ['杭州','宁波','温州','嘉兴','湖州','绍兴','金华','衢州','舟山','台州','丽水']
+    for city in cities:
+        url = str(base+city+date)
+        data=getHTMLText(url)
+        print(data)
+
+
 
 main()
